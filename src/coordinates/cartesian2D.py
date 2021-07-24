@@ -11,4 +11,14 @@ class Cartesian2D(NamedTuple):
   x: float
   y: float
 
+  def __eq__(self, other):
+    if not isinstance(other, type(self)):
+      return False
+    if other is None:
+      return False
+    return list(self) == list(other)
+
+  def __ne__(self, other):
+    return not self.__eq__(other)
+
 coordinate.Coordinate.register(Cartesian2D)
