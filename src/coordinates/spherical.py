@@ -5,7 +5,11 @@
 
 from typing import NamedTuple
 
+from . import coordinate
+
 class Spherical(NamedTuple):
   rho: float
   theta: float
   phi: float
+
+coordinate.Coordinate.register(Spherical)

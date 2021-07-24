@@ -5,6 +5,10 @@
 
 from typing import NamedTuple
 
+from . import coordinate
+
 class Polar(NamedTuple):
   r: float
   theta: float
+
+coordinate.Coordinate.register(Polar)

@@ -5,6 +5,10 @@
 
 from typing import NamedTuple
 
+from . import coordinate
+
 class Cartesian2D(NamedTuple):
   x: float
   y: float
+
+coordinate.Coordinate.register(Cartesian2D)
