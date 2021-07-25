@@ -75,17 +75,17 @@ if __name__ == "__main__":
   input = Cartesian3D(*args.input)
 
   rotate = None
-  if (args.axis == 'x'):
+  if args.axis == 'x':
     rotated = Rotate(input).aboutXAxis(args.rotation)
-  if (args.axis == 'y'):
+  if args.axis == 'y':
     rotated = Rotate(input).aboutYAxis(args.rotation)
-  if (args.axis == 'z'):
+  if args.axis == 'z':
     rotated = Rotate(input).aboutZAxis(args.rotation)
 
   output = None
-  if (args.output_system == 'cartesian3D'):
+  if args.output_system == 'cartesian3D':
     output = Convert(rotated).toCartesian3D()
-  if (args.output_system == 'spherical'):
+  if args.output_system == 'spherical':
     output = Convert(rotated).toSpherical()
 
   print(output)
