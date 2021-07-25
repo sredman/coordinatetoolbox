@@ -3,7 +3,7 @@
 
 from typing import NamedTuple
 
-from . import coordinate
+from .coordinate import Coordinate
 
 class Cartesian2D(NamedTuple):
   """
@@ -23,4 +23,4 @@ class Cartesian2D(NamedTuple):
   def __ne__(self, other):
     return not self.__eq__(other)
 
-coordinate.Coordinate.register(Cartesian2D)
+Coordinate.register(Cartesian2D)

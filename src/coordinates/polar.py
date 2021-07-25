@@ -3,7 +3,7 @@
 
 from typing import NamedTuple
 
-from . import coordinate
+from .coordinate import Coordinate
 
 class Polar(NamedTuple):
   """
@@ -23,4 +23,4 @@ class Polar(NamedTuple):
   def __ne__(self, other):
     return not self.__eq__(other)
 
-coordinate.Coordinate.register(Polar)
+Coordinate.register(Polar)

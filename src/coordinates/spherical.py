@@ -3,7 +3,7 @@
 
 from typing import NamedTuple
 
-from . import coordinate
+from .coordinate import Coordinate
 
 class Spherical(NamedTuple):
   """
@@ -24,4 +24,4 @@ class Spherical(NamedTuple):
   def __ne__(self, other):
     return not self.__eq__(other)
 
-coordinate.Coordinate.register(Spherical)
+Coordinate.register(Spherical)
