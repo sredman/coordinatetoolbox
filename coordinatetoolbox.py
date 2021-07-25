@@ -80,7 +80,7 @@ def main():
 
   input_coordinate = Cartesian3D(*args.input)
 
-  rotate = None
+  rotated = None
   if args.axis == 'x':
     rotated = Rotate(input_coordinate).aboutXAxis(args.rotation)
   if args.axis == 'y':
