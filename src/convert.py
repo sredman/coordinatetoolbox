@@ -5,25 +5,27 @@
 
 import math
 
-from .coordinates import *
+from .coordinates.coordinate import Coordinate
+from .coordinates.spherical import Spherical
+from .coordinates.cartesian3D import Cartesian3D
 
 class Convert:
 
-  def __init__(self, coordinate: coordinate.Coordinate):
+  def __init__(self, coordinate: Coordinate):
     self.coordinate = coordinate
 
-  def toSpherical(self) -> spherical.Spherical:
-    if isinstance(self.coordinate, spherical.Spherical):
+  def toSpherical(self) -> Spherical:
+    if isinstance(self.coordinate, Spherical):
       return self.coordinate
-    if isinstance(self.coordinate, cartesian3D.Cartesian3D):
+    if isinstance(self.coordinate, Cartesian3D):
       magnitude = math.sqrt(self.coordinate.x**2 + self.coordinate.y**2 + self.coordinate.z**2)
-      return spherical.Spherical(
+      return Spherical(
           rho=magnitude,
           theta=math.degrees(math.atan(self.coordinate.y / self.coordinate.x)),
           phi=math.degrees(math.acos(self.coordinate.z / magnitude))
         )
 
-    raise ConvertNotDefinedError("Cannot convert from {type} to {target}".format(type=self.coordinate.__class__.__name__, target=spherical.Spherical.__name__))
+    raise ConvertNotDefinedError("Cannot convert from {type} to {target}".format(type=self.coordinate.__class__.__name__, target=Spherical.__name__))
 
 class ConvertNotDefinedError(TypeError):
   """
