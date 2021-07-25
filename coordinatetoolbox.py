@@ -78,15 +78,15 @@ def main():
                       )
   args = parser.parse_args()
 
-  input = Cartesian3D(*args.input)
+  input_coordinate = Cartesian3D(*args.input)
 
   rotate = None
   if args.axis == 'x':
-    rotated = Rotate(input).aboutXAxis(args.rotation)
+    rotated = Rotate(input_coordinate).aboutXAxis(args.rotation)
   if args.axis == 'y':
-    rotated = Rotate(input).aboutYAxis(args.rotation)
+    rotated = Rotate(input_coordinate).aboutYAxis(args.rotation)
   if args.axis == 'z':
-    rotated = Rotate(input).aboutZAxis(args.rotation)
+    rotated = Rotate(input_coordinate).aboutZAxis(args.rotation)
 
   output = None
   if args.output_system == 'cartesian3D':
