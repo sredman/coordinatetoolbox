@@ -5,6 +5,13 @@ from argparse import HelpFormatter
 from functools import partial
 from typing import Any, cast
 
+from src.coordinates.cartesian2D import Cartesian2D
+from src.coordinates.cartesian3D import Cartesian3D
+from src.coordinates.polar import Polar
+from src.coordinates.spherical import Spherical
+
+from src.rotate import Rotate
+from src.convert import Convert
 
 class CustomHelpFormatter(HelpFormatter):
 
@@ -38,25 +45,29 @@ class ArgsNamespace(argparse.Namespace):
     def __init__(self, **kwargs: Any) -> None:
         super().__init__(**kwargs)
 
-
-""" 
-In addition to the other Python argparse CLI template this one supports type checking. 
-Make sure that you have the Python KDevelop plugin installed.
-"""
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Describe your project', formatter_class=CustomHelpFormatter)
+    parser = argparse.ArgumentParser(description='Toolbox for converting between and rotating vectors in 3D space', formatter_class=CustomHelpFormatter)
     parser.add_argument('-v', '--version', action='version', version='sphericalrotate 1.0')
-    parser.add_argument('-n', '--name', metavar='<name>', help='An optional parameter')
-    parser.add_argument('-e', '--extra', action='store_true', help='This Value is False by default')
+    parser.add_argument('-i', '--input', metavar='float', type=float, nargs=3, help='Input point, like --input x y z', required=True)
+    parser.add_argument('-r', '--rotation', metavar='float', type=float, help='Angle in degrees to rotate', default=0)
+    parser.add_argument('-a', '--axis', choices=['x', 'y', 'z'], type=str, help='Axis about which to rotate', default='x')
+    parser.add_argument('-os', '--output-system', choices=['cartesian3D', 'spherical'], help='Coordinate system to use for outputs', default='spherical')
     args: ArgsNamespace = cast(ArgsNamespace, parser.parse_args())
 
-    if args.name and args.extra:
-        print('Hello There ' + args.name + '!')
-    elif args.extra:
-        print('Hello There!')
-    elif args.name:
-        print('Hello ' + args.name + '!')
-    else:
-        print('Hello World!')
+    input = Cartesian3D(*args.input)
 
+    rotate = None
+    if (args.axis == 'x'):
+      rotated = Rotate(input).aboutXAxis(args.rotation)
+    if (args.axis == 'y'):
+      rotated = Rotate(input).aboutYAxis(args.rotation)
+    if (args.axis == 'z'):
+      rotated = Rotate(input).aboutZAxis(args.rotation)
+
+    output = None
+    if (args.output_system == 'cartesian3D'):
+      output = Convert(rotated).toCartesian3D()
+    if (args.output_system == 'spherical'):
+      output = Convert(rotated).toSpherical()
+
+    print(output)
