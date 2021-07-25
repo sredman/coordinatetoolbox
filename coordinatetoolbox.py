@@ -38,13 +38,39 @@ class CustomHelpFormatter(HelpFormatter):
       return ', '.join(parts)
 
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='Toolbox for converting between coordinate systems and rotating points in 3D space', formatter_class=CustomHelpFormatter)
-  parser.add_argument('-v', '--version', action='version', version='coordinatetoolbox 1.0')
-  parser.add_argument('-i', '--input', metavar='float', type=float, nargs=3, help='Input point, like --input x y z', required=True)
-  parser.add_argument('-r', '--rotation', metavar='float', type=float, help='Angle in degrees to rotate', default=0)
-  parser.add_argument('-a', '--axis', choices=['x', 'y', 'z'], type=str, help='Axis about which to rotate', default='x')
-  parser.add_argument('-os', '--output-system', choices=['cartesian3D', 'spherical'], help='Coordinate system to use for outputs', default='spherical')
-  args: ArgsNamespace = cast(ArgsNamespace, parser.parse_args())
+  parser = argparse.ArgumentParser(
+    description='Toolbox for converting between coordinate systems and rotating points in 3D space',
+    formatter_class=CustomHelpFormatter
+    )
+  parser.add_argument('-v', '--version',
+                      action='version',
+                      version='coordinatetoolbox 1.0'
+                      )
+  parser.add_argument('-i', '--input',
+                      metavar='float',
+                      type=float,
+                      nargs=3,
+                      help='Input point, like --input x y z',
+                      required=True
+                      )
+  parser.add_argument('-r', '--rotation',
+                      metavar='float',
+                      type=float,
+                      help='Angle in degrees to rotate',
+                      default=0
+                      )
+  parser.add_argument('-a', '--axis',
+                      choices=['x', 'y', 'z'],
+                      type=str,
+                      help='Axis about which to rotate',
+                      default='x'
+                      )
+  parser.add_argument('-os', '--output-system',
+                      choices=['cartesian3D', 'spherical'],
+                      help='Coordinate system to use for outputs',
+                      default='spherical'
+                      )
+  args = parser.parse_args()
 
   input = Cartesian3D(*args.input)
 
