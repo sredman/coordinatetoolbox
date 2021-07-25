@@ -101,4 +101,4 @@ class TestCartesian3D(unittest.TestCase):
     self.assertAlmostEqual(expected.z, result.z, places=3)
 
 if __name__ == '__main__':
-    unittest.main()
+  unittest.main()

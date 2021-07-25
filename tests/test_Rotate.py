@@ -140,3 +140,6 @@ class TestRotate(unittest.TestCase):
     self.assertAlmostEqual(val1.x, val2.x, places=places)
     self.assertAlmostEqual(val1.y, val2.y, places=places)
     self.assertAlmostEqual(val1.z, val2.z, places=places)
+
+if __name__ == '__main__':
+  unittest.main()

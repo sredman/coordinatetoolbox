@@ -100,4 +100,4 @@ class TestSpherical(unittest.TestCase):
     self.assertEqual(val, result, "Expected converting spherical coordinates to spherical coordinates to return an equal coordinate")
 
 if __name__ == '__main__':
-    unittest.main()
+  unittest.main()
