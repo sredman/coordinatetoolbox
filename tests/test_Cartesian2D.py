@@ -5,11 +5,11 @@
 
 import unittest
 
-from src.coordinates.coordinate import Coordinate
-from src.coordinates.cartesian2D import Cartesian2D
-from src.coordinates.cartesian3D import Cartesian3D
-from src.coordinates.polar import Polar
-from src.coordinates.spherical import Spherical
+from src.coordinates import Coordinate
+from src.coordinates import Cartesian2D
+from src.coordinates import Cartesian3D
+from src.coordinates import Polar
+from src.coordinates import Spherical
 
 class TestCartesian2D(unittest.TestCase):
   """

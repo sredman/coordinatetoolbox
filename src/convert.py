@@ -3,9 +3,9 @@
 
 import math
 
-from .coordinates.coordinate import Coordinate
-from .coordinates.spherical import Spherical
-from .coordinates.cartesian3D import Cartesian3D
+from src.coordinates import Coordinate
+from src.coordinates import Cartesian3D
+from src.coordinates import Spherical
 
 class Convert:
   """

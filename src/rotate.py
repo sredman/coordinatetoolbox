@@ -9,9 +9,9 @@ from scipy.spatial.transform import Rotation as R
 from typing import Tuple
 
 from .convert import Convert
-from .coordinates.coordinate import Coordinate
-from .coordinates.spherical import Spherical
-from .coordinates.cartesian3D import Cartesian3D
+from .coordinates import Coordinate
+from .coordinates import Spherical
+from .coordinates import Cartesian3D
 
 class Rotate:
   """
