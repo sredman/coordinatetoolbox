@@ -3,6 +3,10 @@
 # SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
+"""
+Interactive entry-point for Coordinate Toolbox
+"""
+
 import argparse
 from argparse import HelpFormatter
 from functools import partial
@@ -14,6 +18,9 @@ from src.rotate import Rotate
 from src.convert import Convert
 
 class CustomHelpFormatter(HelpFormatter):
+    """
+    Help formatter for Coordinate Toolbox
+    """
 
   def _format_action_invocation(self, action):
     if not action.option_strings:
