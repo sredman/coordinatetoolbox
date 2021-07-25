@@ -6,7 +6,11 @@
 
 import unittest
 
-from src.coordinates import *
+from src.coordinates.coordinate import Coordinate
+from src.coordinates.cartesian2D import Cartesian2D
+from src.coordinates.cartesian3D import Cartesian3D
+from src.coordinates.polar import Polar
+from src.coordinates.spherical import Spherical
 
 class TestCartesian3D(unittest.TestCase):
   """
@@ -14,34 +18,34 @@ class TestCartesian3D(unittest.TestCase):
   """
 
   def test_constructor(self):
-    val = cartesian3D.Cartesian3D(1, 2, 3)
+    val = Cartesian3D(1, 2, 3)
     self.assertEqual(val.x, 1)
     self.assertEqual(val.y, 2)
     self.assertEqual(val.z, 3)
-    self.assertTrue(issubclass(type(val), coordinate.Coordinate), "All coordinate types should be subclasses of Coordinate")
+    self.assertTrue(issubclass(type(val), Coordinate), "All coordinate types should be subclasses of Coordinate")
 
   def test_equals_basis(self):
     """
     Test that the equality operator works correctly when given inputs expected to be equal
     """
-    val1 = cartesian3D.Cartesian3D(1, 2, 3)
-    val2 = cartesian3D.Cartesian3D(1, 2, 3)
+    val1 = Cartesian3D(1, 2, 3)
+    val2 = Cartesian3D(1, 2, 3)
     self.assertEqual(val1, val2)
 
   def test_equals_false(self):
     """
     Test that the equality operator works correctly when given inputs expected to be not equal
     """
-    val1 = cartesian3D.Cartesian3D(1, 2, 3)
-    val2 = cartesian3D.Cartesian3D(2, 1, 3)
+    val1 = Cartesian3D(1, 2, 3)
+    val2 = Cartesian3D(2, 1, 3)
     self.assertNotEqual(val1, val2)
 
   def test_equals_other_type(self):
     """
     Test that the equality operator works correctly when given inputs of different types
     """
-    val1 = cartesian3D.Cartesian3D(1, 2, 3)
-    val2 = spherical.Spherical(1, 2, 3)
+    val1 = Cartesian3D(1, 2, 3)
+    val2 = Spherical(1, 2, 3)
     # Exercise the __ne__ operator
     self.assertNotEqual(val1, val2)
     # Exercise the __eq__ operator
@@ -51,7 +55,7 @@ class TestCartesian3D(unittest.TestCase):
     """
     Test that the equality operator works correctly when given None as an input
     """
-    val1 = cartesian3D.Cartesian3D(1, 2, 3)
+    val1 = Cartesian3D(1, 2, 3)
     val2 = None
     # Exercise the __ne__ operator
     self.assertNotEqual(val1, val2)
