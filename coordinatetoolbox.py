@@ -39,7 +39,11 @@ class CustomHelpFormatter(HelpFormatter):
       return '%s %s' % (', '.join(parts), args_string)
     return ', '.join(parts)
 
-if __name__ == "__main__":
+def main():
+  """
+  Main method for Coordinate Toolbox CLI
+  """
+
   parser = argparse.ArgumentParser(
     description='Toolbox for converting between coordinate systems and rotating points in 3D space',
     formatter_class=CustomHelpFormatter
@@ -91,3 +95,6 @@ if __name__ == "__main__":
     output = Convert(rotated).toSpherical()
 
   print(output)
+
+if __name__ == "__main__":
+  main()
