@@ -1,13 +1,15 @@
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: polar.py
-# @description: Represent a polar point
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 from typing import NamedTuple
 
 from . import coordinate
 
 class Polar(NamedTuple):
+  """
+  Represent a Polar point in 2D space
+  """
+
   r: float
   theta: float
 

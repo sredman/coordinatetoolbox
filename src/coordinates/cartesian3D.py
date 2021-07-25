@@ -1,13 +1,15 @@
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: cartesian3D.py
-# @description: Represent a 3D Cartesian point
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 from typing import NamedTuple
 
 from . import coordinate
 
 class Cartesian3D(NamedTuple):
+  """
+  Represent a Cartesian point in 3D space
+  """
+
   x: float
   y: float
   z: float

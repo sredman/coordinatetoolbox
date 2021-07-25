@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: coordinatetoolbox.py
-# @description: Convert coordinates between various coordinate systems and rotating points in 3D space
+
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 import argparse
 from argparse import HelpFormatter
@@ -50,8 +49,8 @@ class ArgsNamespace(argparse.Namespace):
         super().__init__(**kwargs)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Toolbox for converting between and rotating points in 3D space', formatter_class=CustomHelpFormatter)
-    parser.add_argument('-v', '--version', action='version', version='sphericalrotate 1.0')
+    parser = argparse.ArgumentParser(description='Toolbox for converting between coordinate systems and rotating points in 3D space', formatter_class=CustomHelpFormatter)
+    parser.add_argument('-v', '--version', action='version', version='coordinatetoolbox 1.0')
     parser.add_argument('-i', '--input', metavar='float', type=float, nargs=3, help='Input point, like --input x y z', required=True)
     parser.add_argument('-r', '--rotation', metavar='float', type=float, help='Angle in degrees to rotate', default=0)
     parser.add_argument('-a', '--axis', choices=['x', 'y', 'z'], type=str, help='Axis about which to rotate', default='x')

@@ -1,7 +1,5 @@
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: rotate.py
-# @description: Rotates coordinates about given vectors
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 import math
 import numpy as np
@@ -16,6 +14,9 @@ from .coordinates.spherical import Spherical
 from .coordinates.cartesian3D import Cartesian3D
 
 class Rotate:
+  """
+  Operator class for various rotations on the given coordinate
+  """
 
   def __init__(self, coordinate: Coordinate):
     self.coordinate = coordinate

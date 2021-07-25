@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: TestPolar.py
-# @description: Test cases for the Polar coordinate type
+
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 import unittest
 

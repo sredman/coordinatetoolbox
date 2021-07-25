@@ -1,13 +1,15 @@
-# @author: Simon Redman <simon@ergotech.com>
-# @date: 2021-07-24
-# @filename: spherical.py
-# @description: Represent a spherical point
+# SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
+# SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
 from typing import NamedTuple
 
 from . import coordinate
 
 class Spherical(NamedTuple):
+  """
+  Represent a Spherical point in 3D space
+  """
+
   rho: float
   theta: float
   phi: float
