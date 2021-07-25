@@ -37,14 +37,6 @@ class CustomHelpFormatter(HelpFormatter):
 
       return ', '.join(parts)
 
-
-class ArgsNamespace(argparse.Namespace):
-  name: str
-  extra: bool
-
-  def __init__(self, **kwargs: Any) -> None:
-    super().__init__(**kwargs)
-
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='Toolbox for converting between coordinate systems and rotating points in 3D space', formatter_class=CustomHelpFormatter)
   parser.add_argument('-v', '--version', action='version', version='coordinatetoolbox 1.0')
