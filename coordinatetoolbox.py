@@ -9,8 +9,6 @@ Interactive entry-point for Coordinate Toolbox
 
 import argparse
 from argparse import HelpFormatter
-from functools import partial
-from typing import Any, cast
 
 from src.coordinates import Cartesian3D
 
