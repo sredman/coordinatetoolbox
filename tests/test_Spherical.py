@@ -83,6 +83,42 @@ class TestSpherical(unittest.TestCase):
     self.assertAlmostEqual(expected.theta, result.theta, places=3)
     self.assertAlmostEqual(expected.phi, result.phi, places=3)
 
+  def test_convert_fromCartesian3D_second_quadrant(self):
+    """
+    Test that converting from Cartesian3D with a negative x value and a positive y value
+    to Spherical returns correctly
+    """
+    val = Cartesian3D(-1, 1, 1)
+    expected = Spherical(math.sqrt(3), 135.0000, 54.7356)
+    result = Convert(val).toSpherical()
+    self.assertAlmostEqual(expected.rho, result.rho, places=3)
+    self.assertAlmostEqual(expected.theta, result.theta, places=3)
+    self.assertAlmostEqual(expected.phi, result.phi, places=3)
+
+  def test_convert_fromCartesian3D_third_quadrant(self):
+    """
+    Test that converting from Cartesian3D with a negative x value and a negative y value
+    to Spherical returns correctly
+    """
+    val = Cartesian3D(-1, -1, 1)
+    expected = Spherical(math.sqrt(3), 225.0000, 54.7356)
+    result = Convert(val).toSpherical()
+    self.assertAlmostEqual(expected.rho, result.rho, places=3)
+    self.assertAlmostEqual(expected.theta, result.theta, places=3)
+    self.assertAlmostEqual(expected.phi, result.phi, places=3)
+
+  def test_convert_fromCartesian3D_fourth_quadrant(self):
+    """
+    Test that converting from Cartesian3D with a positive x value and a negative y value
+    to Spherical returns correctly
+    """
+    val = Cartesian3D(1, -1, 1)
+    expected = Spherical(math.sqrt(3), 315.0000, 54.7356)
+    result = Convert(val).toSpherical()
+    self.assertAlmostEqual(expected.rho, result.rho, places=3)
+    self.assertAlmostEqual(expected.theta, result.theta, places=3)
+    self.assertAlmostEqual(expected.phi, result.phi, places=3)
+
   def test_convert_fromPolar(self):
     """
     Test that converting from Polar to Spherical correctly returns an error
