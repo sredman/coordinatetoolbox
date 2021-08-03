@@ -1,6 +1,10 @@
 # SPDX-FileCopyrightText: 2021 Simon Redman <simon@ergotech.com>
 # SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only
 
+"""
+Operator class for various rotations on the given coordinate
+"""
+
 import math
 import numpy as np
 import scipy as sp
