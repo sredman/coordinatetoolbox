@@ -6,11 +6,10 @@ Operator class for various rotations on the given coordinate
 """
 
 import math
-import numpy as np
-import scipy as sp
-from scipy.spatial.transform import Rotation as R
-
 from typing import Tuple
+
+import numpy as np
+from scipy.spatial.transform import Rotation as R
 
 from .convert import Convert
 from .coordinates import Coordinate
