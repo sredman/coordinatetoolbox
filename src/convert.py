@@ -20,9 +20,21 @@ class Convert:
       return self.coordinate
     if isinstance(self.coordinate, Cartesian3D):
       magnitude = math.sqrt(self.coordinate.x**2 + self.coordinate.y**2 + self.coordinate.z**2)
+      atan_theta = math.degrees(math.atan(self.coordinate.y / self.coordinate.x))
+      # Since arctan only ever returns between -90 and 90 degrees, we need to use our knowledge
+      # of geometry to "translate" the angle correctly
+      if self.coordinate.x >= 0:
+        theta = atan_theta
+      elif self.coordinate.x < 0:
+        theta = atan_theta + 180
+
+      if theta < 0:
+        # Always return a positive value for degrees
+        theta = theta + 360
+
       return Spherical(
           rho=magnitude,
-          theta=math.degrees(math.atan(self.coordinate.y / self.coordinate.x)),
+          theta=theta,
           phi=math.degrees(math.acos(self.coordinate.z / magnitude))
         )
 
