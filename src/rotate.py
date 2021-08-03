@@ -70,4 +70,4 @@ class Rotate:
       return Convert(retval).toSpherical()
     if isinstance(self.coordinate, Cartesian3D):
       return Convert(retval).toCartesian3D()
-    raise NotImplementedError("Not prepared to rotate a {type}".format(self.coordinate.__class__.__name__))
+    raise NotImplementedError("Not prepared to rotate a {type}".format(type=self.coordinate.__class__.__name__))
