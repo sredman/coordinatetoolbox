@@ -82,11 +82,11 @@ def main():
 
   rotated = None
   if args.axis == 'x':
-    rotated = Rotate(input_coordinate).aboutXAxis(args.rotation)
+    rotated = Rotate(input_coordinate).about_x_axis(args.rotation)
   if args.axis == 'y':
-    rotated = Rotate(input_coordinate).aboutYAxis(args.rotation)
+    rotated = Rotate(input_coordinate).about_y_axis(args.rotation)
   if args.axis == 'z':
-    rotated = Rotate(input_coordinate).aboutZAxis(args.rotation)
+    rotated = Rotate(input_coordinate).about_z_axis(args.rotation)
 
   output = None
   if args.output_system == 'cartesian3D':

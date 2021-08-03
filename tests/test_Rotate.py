@@ -25,7 +25,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 0, 0)
     expected = Cartesian3D(1, 0, 0)
-    result = Rotate(val).aboutXAxis(90)
+    result = Rotate(val).about_x_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_xunit_yaxis(self):
@@ -34,7 +34,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 0, 0)
     expected = Cartesian3D(0, 0, -1)
-    result = Rotate(val).aboutYAxis(90)
+    result = Rotate(val).about_y_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_xunit_zaxis(self):
@@ -43,7 +43,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 0, 0)
     expected = Cartesian3D(0, 1, 0)
-    result = Rotate(val).aboutZAxis(90)
+    result = Rotate(val).about_z_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_yunit_xaxis(self):
@@ -52,7 +52,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 1, 0)
     expected = Cartesian3D(0, 0, 1)
-    result = Rotate(val).aboutXAxis(90)
+    result = Rotate(val).about_x_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_neg_yunit_xaxis(self):
@@ -61,7 +61,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, -1, 0)
     expected = Cartesian3D(0, 0, -1)
-    result = Rotate(val).aboutXAxis(90)
+    result = Rotate(val).about_x_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_yunit_yaxis(self):
@@ -70,7 +70,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 1, 0)
     expected = Cartesian3D(0, 1, 0)
-    result = Rotate(val).aboutYAxis(90)
+    result = Rotate(val).about_y_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_yunit_zaxis(self):
@@ -79,7 +79,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 1, 0)
     expected = Cartesian3D(-1, 0, 0)
-    result = Rotate(val).aboutZAxis(90)
+    result = Rotate(val).about_z_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_zunit_xaxis(self):
@@ -88,7 +88,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 0, 1)
     expected = Cartesian3D(0, -1, 0)
-    result = Rotate(val).aboutXAxis(90)
+    result = Rotate(val).about_x_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_zunit_yaxis(self):
@@ -97,7 +97,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 0, 1)
     expected = Cartesian3D(1, 0, 0)
-    result = Rotate(val).aboutYAxis(90)
+    result = Rotate(val).about_y_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_zunit_zaxis(self):
@@ -106,7 +106,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(0, 0, 1)
     expected = Cartesian3D(0, 0, 1)
-    result = Rotate(val).aboutZAxis(90)
+    result = Rotate(val).about_z_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_idvec_xaxis(self):
@@ -115,7 +115,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 1, 1)
     expected = Cartesian3D(1, -1, 1)
-    result = Rotate(val).aboutXAxis(90)
+    result = Rotate(val).about_x_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_idvec_yaxis(self):
@@ -124,7 +124,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 1, 1)
     expected = Cartesian3D(1, 1, -1)
-    result = Rotate(val).aboutYAxis(90)
+    result = Rotate(val).about_y_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def test_rotate_idvec_zaxis(self):
@@ -133,7 +133,7 @@ class TestRotate(unittest.TestCase):
     """
     val = Cartesian3D(1, 1, 1)
     expected = Cartesian3D(-1, 1, 1)
-    result = Rotate(val).aboutZAxis(90)
+    result = Rotate(val).about_z_axis(90)
     self.fuzzyCompareCartesian3D(expected, result)
 
   def fuzzyCompareCartesian3D(self, val1: Cartesian3D, val2: Cartesian3D, places=3):

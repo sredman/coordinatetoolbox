@@ -24,34 +24,34 @@ class Rotate:
   def __init__(self, coordinate: Coordinate):
     self.coordinate = coordinate
 
-  def aboutXAxis(self, rotation: float) -> Coordinate:
+  def about_x_axis(self, rotation: float) -> Coordinate:
     """
     Rotate the input coordinate a given number of degrees around the X axis
 
     rotation: float
       The angle (in degrees) to rotate
     """
-    return self.aboutVector(aboutvec=[1, 0, 0], rotation=rotation)
+    return self.about_vector(aboutvec=[1, 0, 0], rotation=rotation)
 
-  def aboutYAxis(self, rotation: float) -> Coordinate:
+  def about_y_axis(self, rotation: float) -> Coordinate:
     """
     Rotate the input coordinate a given number of degrees around the Y axis
 
     rotation: float
       The angle (in degrees) to rotate
     """
-    return self.aboutVector(aboutvec=[0, 1, 0], rotation=rotation)
+    return self.about_vector(aboutvec=[0, 1, 0], rotation=rotation)
 
-  def aboutZAxis(self, rotation: float) -> Coordinate:
+  def about_z_axis(self, rotation: float) -> Coordinate:
     """
     Rotate the input coordinate a given number of degrees around the Z axis
 
     rotation: float
       The angle (in degrees) to rotate
     """
-    return self.aboutVector(aboutvec=[0, 0, 1], rotation=rotation)
+    return self.about_vector(aboutvec=[0, 0, 1], rotation=rotation)
 
-  def aboutVector(self, aboutvec: Tuple[float, float, float], rotation: float) -> Coordinate:
+  def about_vector(self, aboutvec: Tuple[float, float, float], rotation: float) -> Coordinate:
     """
     Rotate the input coordinate a given number of degrees around the given vector
 
